@@ -1,0 +1,40 @@
+extends ../../../../templates/secret
+block content
+
+    <link rel="stylesheet" href="/styles/guestform.css">
+    <div class="container">
+    //- a.button(class="btn btn-primary" href=`/admin/emergency/${emergencies.emergency_id}/add` style="float:right; margin-right: 10px; font-family:'KG Broken Vessels Sketch Regular'; margin-top: 10px;") Add emergency Sub-category
+    //- a.button(class="btn btn-primary" href=`/admin/emergency/${emergencies.emergency_id}/deleted` style="float:right; margin-right: 10px; font-family:'KG Broken Vessels Sketch Regular'; margin-top: 10px;") Show Deleted
+
+    <div class="jumbotron">
+    each emergency in emergencies
+        form(class="form-horizontal" )
+
+            <fieldset>
+                    <div class="form-group">
+                    <label for="inputName" class="col-lg-2 control-label">CATEGORY NAME:</label>
+                    <div class="col-lg-3">
+                        input(type="text" disabled="disabled" name="categoryname" class="form-control" value= `${emergency.cat_name}`) 
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <label for="inputName" class="col-lg-2 control-label">INFO:</label>
+                    <div class="col-lg-3">
+                        textarea.form-control(type="text" disabled="disabled" name="info" rows="8") #{emergency.cat_info}
+                    </div>
+                    </div>
+                    
+                    <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        //- <button type="submit" class="btn btn-primary">Submit</button>
+                        //- a.button(class="btn btn-danger" href=`/admin/emergency/${emergency.emergency_id}/${emergency.emergency_type_id}/delete` style="float:right; font-family:'KG Broken Vessels Sketch Regular'") Delete
+                        a.button(class="btn btn-primary" href=`/admin/emergency/${emergency.emergency_id}/${emergency.emergency_type_id}/edit` style="float:right; margin-right: 5px; font-family:'KG Broken Vessels Sketch Regular'") Edit
+
+                    </div>
+                    </div>
+
+            </fieldset>
+        </form>
+    </div>
+    </div>
+    </div>

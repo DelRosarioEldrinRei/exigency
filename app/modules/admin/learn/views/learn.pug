@@ -1,0 +1,30 @@
+extends ../../../../templates/secret.pug
+
+block content
+	link(rel='stylesheet' href='/styles/guestform.css')
+	.container
+		a.button(class="btn btn-primary" href=`/admin/learn/addlearncat` style="float:right; margin-right: 10px; font-family:'KG Broken Vessels Sketch Regular'; margin-top: 10px;") Add Learn Category
+		a.button(class="btn btn-primary" href=`/admin/learn/deleted` style="float:right; margin-right: 10px; font-family:'KG Broken Vessels Sketch Regular'; margin-top: 10px;") Show Deleted
+		.jumbotron
+			.form-group
+				.col-lg-10.col-lg-offset-2
+			table.table.table-striped.table-hover
+				thead
+					th LEARN ID
+					th CATEGORY
+					th ACTIONS
+				tbody
+					each learn in learns
+						- var name = `collapse${learn.learn_id}`
+						- var name2 = `collapse2${learn.learn_id}`
+						- var heading = `#heading${learn.learn_id}`
+						- var heading2 = `#heading2${learn.learn_id}`
+						tr 	
+							td=learn.learn_id
+							td=learn.learn_name
+							
+							
+							td(style="display: flex; justify-content: center")
+								a.button(class="btn btn-sm btn-primary" href=`/admin/learn/${learn.learn_id}/view` style="float:right; margin-right: 5px; font-family:'KG Broken Vessels Sketch Regular'") View
+								a.button(class="btn btn-sm btn-info" href=`/admin/learn/${learn.learn_id}/edit` style="float:right; margin-right: 5px; font-family:'KG Broken Vessels Sketch Regular'") Edit 
+								a.button(class="btn btn-sm btn-danger" href=`/admin/learn/${learn.learn_id}/delete` style="float:right; font-family:'KG Broken Vessels Sketch Regular'") Delete

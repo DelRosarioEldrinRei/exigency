@@ -1,0 +1,29 @@
+extends ../../../../templates/secret
+
+block content
+	link(rel='stylesheet' href='/styles/guestform.css')
+	.container
+		
+		a.button(class="btn btn-primary" href=`/admin/emergency` style="float:right; margin-right: 10px; font-family:'KG Broken Vessels Sketch Regular'; margin-top: 10px;") Show Saved
+		.jumbotron
+			.form-group
+				.col-lg-10.col-lg-offset-2
+			table.table.table-striped.table-hover
+				thead
+					th emergency ID
+					th CATEGORY
+					th ACTION
+				tbody
+					each emergency in emergencies
+						- var name = `collapse${emergency.emergency_id}`
+						- var name2 = `collapse2${emergency.emergency_id}`
+						- var heading = `#heading${emergency.emergency_id}`
+						- var heading2 = `#heading2${emergency.emergency_id}`
+						tr 	
+							td=emergency.emergency_id
+							td=emergency.emergency_name
+							
+							
+							td(style="display: flex; justify-content: center")
+								a.button(class="btn btn-info" href=`/admin/emergency/${emergency.emergency_id}/restore` style="float:right; font-family:'KG Broken Vessels Sketch Regular'") Restore 
+								a.button(class="btn btn-danger" id="alertEvt" href=`/admin/emergency/${emergency.emergency_id}/deletepermanently` style="float:right; margin-right: 10px; font-family:'KG Broken Vessels Sketch Regular'") Delete Permanently

@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .header {
+    height: 100vh;
+    background-image: linear-gradient(
+      to right bottom,
+      #cc00009c,
+      #ff0000a4), 
+    url(../assets/pics/emergency.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    clip-path: polygon(50% 0,100% 0, 100% 100%, 0 85%);
+  }
+  
+  .text-box {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+  }
+
+  .heading-primary{
+    color: #fff;
+    text-transform: uppercase;
+  }
+  
+  .heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: 35px;
+  }
+  
+  .heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 17.4px
+  }
+
+  .form-space {
+      margin-top: 5%;
+      margin-left: 18%;
+  }
+
+  .label-primary {
+    display: block;
+    font-size: 17px;
+    font-weight: 300;
+    letter-spacing: 10px
+
+  }
+
+  .input-primary {
+    width: 70%;
+    display: block;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid rgb(0, 0, 0);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    box-shadow: 2px 8px 18px #353333;
+  }
+
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 3px 8px 8px #222222;
+  }
+
+  .button5 {
+      background-color: #555555;
+      margin-left: 120px;
+      font-weight: 500;
+      margin-top: 10px;
+    }

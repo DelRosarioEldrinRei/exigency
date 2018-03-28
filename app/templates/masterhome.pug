@@ -1,0 +1,69 @@
+extends ./basehome
+block body
+	header
+		nav.navbar.navbar-color-on-scroll.navbar-transparent.fixed-top.navbar-expand-lg(color-on-scroll="100" id="sectionsNav")
+			.container
+				.navbar-translate
+					a.navbar-brand(href="/")
+						i.fa.fa-institution(aria-hidden="true") 
+						| &nbsp; Church
+					button.navbar-toggler(type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation")
+						span.navbar-toggler-icon
+						span.navbar-toggler-icon
+						span.navbar-toggler-icon
+				.collapse.navbar-collapse
+					ul.navbar-nav.ml-auto
+						li.nav-item.active: a.nav-link(href="/" rel="tooltip" title="" data-original-title="Back to Home")
+							i.fa.fa-th(aria-hidden="true") 
+							| Home
+						li.nav-item: a.nav-link(href="/about" rel="tooltip" title="" data-original-title="A little Info about Us")
+							i.fa.fa-user-circle-o(aria-hidden="true") 
+							| About Us
+						li.nav-item: a.nav-link(href="/services" rel="tooltip" title="" data-original-title="See our services here")
+							i.fa.fa-cogs(aria-hidden="true") 
+							| Services
+						li.nav-item: a.nav-link(href="#" rel="tooltip" title="" data-original-title="Read our articles")
+							i.fa.fa-comments(aria-hidden="true") 
+							| Blog
+						li.nav-item: a.nav-link(href="#" rel="tooltip" title="" data-original-title="Email Us Now!")
+							i.fa.fa-envelope-o(aria-hidden="true") 
+							| Contact
+						li.dropdown.nav-item
+							a.dropdown-toggle.nav-link(href="#" data-toggle="dropdown")
+								i.fa.fa-thumbs-o-up(aria-hidden="true") 
+								| Follow Us!
+							.dropdown-menu.dropdown-with-icons
+								a.dropdown-item(href="#" rel="tooltip" title="" data-placement="left" data-original-title="Follow us on twitter")
+									i.fa.fa-twitter(aria-hidden="true")
+									| &nbsp; Twitter
+								a.dropdown-item(href="#" rel="tooltip" title="" data-placement="left" data-original-title="Like us on facebook")
+									i.fa.fa-facebook-square(aria-hidden="true")
+									| &nbsp; Facebook
+								a.dropdown-item(href="#" rel="tooltip" title="" data-placement="left" data-original-title="Follow us on instagram")
+									i.fa.fa-instagram(aria-hidden="true")
+									| &nbsp; Instagram
+						li.nav-item: a.nav-link(href="/login" rel="tooltip" title="" data-original-title="Login Now")
+							i.fa.fa-sign-in(aria-hidden="true") 
+							| Login
+						li.nav-item: a.nav-link(href="/signup" rel="tooltip" title="" data-original-title="Signup Now")
+							i.fa.fa-pencil(aria-hidden="true") 
+							| Sign Up
+
+	block main
+	
+	footer.footer
+		.container
+			nav.pull-left
+				ul
+					li: a(href="#") Church
+					li: a(href="#") About Us
+					li: a(href="#") Blog
+					li: a(href="#") Services
+			.copyright.pull-right © 
+				script.
+					document.write(new Date().getFullYear())
+				| , made with 
+				i.fa.fa-heart
+				|  by 
+				a(href="#") SAD Team
+				| ,	Church Events & Facilities Management System

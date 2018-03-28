@@ -1,0 +1,37 @@
+extends ../../../../templates/secret
+block content
+
+    <link rel="stylesheet" href="/styles/guestform.css">
+    <div class="container">
+    <div class="jumbotron">
+    each prepare in prepares
+        form(class="form-horizontal" method='post' action=`/admin/prepare/${prepare.prepare_id}/${prepare.prepare_type_id}/edit`)
+
+            
+            <fieldset>
+                    <div class="form-group">
+                    <label for="inputName" class="col-lg-2 control-label">CATEGORY NAME:</label>
+                    <div class="col-lg-3">
+                        input(type="text" name="categoryname" class="form-control" value= `${prepare.cat_name}` required) 
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <label for="inputName" class="col-lg-2 control-label">INFO:</label>
+                    <div class="col-lg-3">
+                        //- input( type="text" name="info" class="form-control" value=`${prepare.cat_info}`)
+                        textarea.form-control(type="text" name="info" rows="8" required) #{prepare.cat_info}
+                    </div>
+                    </div>
+                    
+                    <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        //- <button type="reset" class="btn btn-danger">Clear</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    </div>
+
+            </fieldset>
+        </form>
+    </div>
+    </div>
+    </div>

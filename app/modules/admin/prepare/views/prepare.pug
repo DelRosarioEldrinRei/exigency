@@ -1,0 +1,30 @@
+extends ../../../../templates/secret.pug
+
+block content
+	link(rel='stylesheet' href='/styles/guestform.css')
+	.container
+		a.button(class="btn btn-primary" href=`/admin/prepare/addpreparecat` style="float:right; margin-right: 10px; font-family:'KG Broken Vessels Sketch Regular'; margin-top: 10px;") Add prepare Category
+		a.button(class="btn btn-primary" href=`/admin/prepare/deleted` style="float:right; margin-right: 10px; font-family:'KG Broken Vessels Sketch Regular'; margin-top: 10px;") Show Deleted
+		.jumbotron
+			.form-group
+				.col-lg-10.col-lg-offset-2
+			table.table.table-striped.table-hover
+				thead
+					th PREPARE ID
+					th CATEGORY
+					th ACTIONS
+				tbody
+					each prepare in prepares
+						- var name = `collapse${prepare.prepare_id}`
+						- var name2 = `collapse2${prepare.prepare_id}`
+						- var heading = `#heading${prepare.prepare_id}`
+						- var heading2 = `#heading2${prepare.prepare_id}`
+						tr 	
+							td=prepare.prepare_id
+							td=prepare.prepare_name
+							
+							
+							td(style="display: flex; justify-content: center")
+								a.button(class="btn btn-sm btn-primary" href=`/admin/prepare/${prepare.prepare_id}/view` style="float:right; margin-right: 5px; font-family:'KG Broken Vessels Sketch Regular'") View
+								a.button(class="btn btn-sm btn-info" href=`/admin/prepare/${prepare.prepare_id}/edit` style="float:right; margin-right: 5px; font-family:'KG Broken Vessels Sketch Regular'") Edit 
+								a.button(class="btn btn-sm btn-danger" href=`/admin/prepare/${prepare.prepare_id}/delete` style="float:right; font-family:'KG Broken Vessels Sketch Regular'") Delete

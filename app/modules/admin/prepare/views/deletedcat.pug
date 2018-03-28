@@ -1,0 +1,30 @@
+extends ../../../../templates/secret.pug
+
+block content
+	link(rel='stylesheet' href='/styles/guestform.css')
+	.container
+		
+		a.button(class="btn btn-primary" href=`/admin/prepare` style="float:right; margin-right: 10px; font-family:'KG Broken Vessels Sketch Regular'; margin-top: 10px;") Show Saved
+		.jumbotron
+			.form-group
+				.col-lg-10.col-lg-offset-2
+			table.table.table-striped.table-hover
+				thead
+					th PREPARE ID
+					th CATEGORY
+					th ACTION
+				tbody
+					each prepare in prepares
+						- var name = `collapse${prepare.prepare_id}`
+						- var name2 = `collapse2${prepare.prepare_id}`
+						- var heading = `#heading${prepare.prepare_id}`
+						- var heading2 = `#heading2${prepare.prepare_id}`
+						tr 	
+							td=prepare.prepare_id
+							td=prepare.prepare_name
+							
+							
+							td(style="display: flex; justify-content: center")
+								a.button(class="btn btn-info" href=`/admin/prepare/${prepare.prepare_id}/restore` style="float:right; font-family:'KG Broken Vessels Sketch Regular'") Restore 
+								a.button(class="btn btn-danger" href=`/admin/prepare/${prepare.prepare_id}/deletepermanently` style="float:right; margin-right: 10px; font-family:'KG Broken Vessels Sketch Regular'") Delete Permanently
+				
